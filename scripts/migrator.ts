@@ -1,4 +1,4 @@
-import { $ } from "bun"
+ import { $ } from "bun"
 import { readdir } from "node:fs/promises"
 import stripIndent from 'strip-indent'
 import { fixTopField, getMigrationVersion, isInfoExist, updateMigrationVersion } from "./fix-top-field"
@@ -17,11 +17,11 @@ const renv = (name: string, defaultValue?: string) => env(name, defaultValue, tr
 
 const DB_NAME = renv("DB_NAME", 'rin')
 const WORKER_NAME = renv("WORKER_NAME", 'rin-server')
-const FRONTEND_URL = env("FRONTEND_URL", "")
+const FRONTEND_URL = env("FRONTEND_URL", "https://rin-4ub.pages.dev")
 
-const S3_ENDPOINT = env("S3_ENDPOINT", "")
-const S3_ACCESS_HOST = env("S3_ACCESS_HOST", S3_ENDPOINT)
-const S3_BUCKET = env("S3_BUCKET", "")
+const S3_ENDPOINT = env("S3_ENDPOINT", "https://ce59cecbd9233205e276b790223b083c.r2.cloudflarestorage.com")
+const S3_ACCESS_HOST = env("S3_ACCESS_HOST", 'https://pub-73e546bd56664634a535d5dee80ccf42.r2.dev')
+const S3_BUCKET = env("S3_BUCKET", "images")
 const S3_CACHE_FOLDER = renv("S3_CACHE_FOLDER", 'cache/')
 const S3_FOLDER = renv("S3_FOLDER", 'images/')
 const S3_REGION = renv("S3_REGION", "auto")
